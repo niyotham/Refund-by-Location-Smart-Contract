@@ -1,4 +1,5 @@
-# Refund by Location Smart Contract
+# Refund by Location Smart Contract Dapps-GPS
+Ethereum is a decentralized, open-source blockchain with smart contract functionality. Ether is the native cryptocurrency of the platform. Among cryptocurrencies, Ether is second only to Bitcoin in market capitalization. Ethereum was conceived in 2013 by programmer Vitalik Buterin.
 
 ![smart contract](https://github.com/niyotham/Refund-by-Location-Smart-Contract/blob/main/smart%20contract.jpeg)
 
