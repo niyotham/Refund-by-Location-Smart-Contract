@@ -17,11 +17,11 @@ produce an Ethereum based dApp that has both the smart contract tested and deplo
 ## Plan
 * Steps to do the project:
 - [ ] Developing smart contract.
-- [ ] Use solidity programming
-- [ ]  Testing and deploying the contract on ethereum blockchain
+    - [ ] Use solidity programming
+    - [ ]  Testing and deploying the contract on ethereum blockchain
 - [ ]  Building frontend web dApp
-- [ ]  Designing the user interface
-- [ ]  Doing it with Reactjs
+    - [ ]  Designing the user interface
+    - [ ]  Doing it with Reactjs
 - [ ]  Connecting the frontend and smart contract backend
 ## Implementation
 - [ ] Frontend  with reactjs
