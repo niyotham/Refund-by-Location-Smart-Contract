@@ -1,0 +1,178 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "payEmployee",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_empAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "int8",
+				"name": "_latitude",
+				"type": "int8"
+			},
+			{
+				"internalType": "int8",
+				"name": "_longitude",
+				"type": "int8"
+			},
+			{
+				"internalType": "int8",
+				"name": "_maxRadius",
+				"type": "int8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "_payAmount",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "_reqAmount",
+				"type": "uint8"
+			}
+		],
+		"name": "setEmployeeAccount",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "int8",
+				"name": "_latitude",
+				"type": "int8"
+			},
+			{
+				"internalType": "int8",
+				"name": "_longitude",
+				"type": "int8"
+			}
+		],
+		"name": "updateCompCountStatus",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "empContractStatus",
+		"outputs": [
+			{
+				"internalType": "int8",
+				"name": "latitude",
+				"type": "int8"
+			},
+			{
+				"internalType": "int8",
+				"name": "longitude",
+				"type": "int8"
+			},
+			{
+				"internalType": "int8",
+				"name": "maxRadius",
+				"type": "int8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "payment",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "compCount",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "reqAmount",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "employeer",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "employees",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getAdmin",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getEmployees",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
