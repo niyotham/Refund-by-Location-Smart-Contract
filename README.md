@@ -17,18 +17,63 @@ produce an Ethereum based dApp that has both the smart contract tested and deplo
 ## Plan
 * Steps to do the project:
 - [ ] Developing smart contract.
-    - [ ] Use solidity programming
+    - [x] Use solidity programming
     - [ ]  Testing and deploying the contract on ethereum blockchain
 - [ ]  Building frontend web dApp
     - [ ]  Designing the user interface
-    - [ ]  Doing it with Reactjs
+    - [ ]  Doing it with Flutter
 - [ ]  Connecting the frontend and smart contract backend
 ## Implementation
-- [ ] Frontend  with reactjs
-- [ ] Backendwith solidity for the smart contract and hardhat frame work is used
+- [ ] Frontend  with Flutter
+- [x] Backendwith solidity for the smart contract and hardhat frame work is used
+### Setting up MetaMask Wallet
+To use MetaMask wallet:
+
+- Install MetaMask extension on the desired web browser.
+- Setup Account and Test network (in this project, Rinkeby test network is used)
+- Load funds into Rinkeby account address by using crypto faucets.
+
+Then Deploying Smart Contract via Remix IDE. After compiling and deploying the Smart Contract by approving transactions in MetaMask wallet, it will show up on our wallet activity status that the contract is deployed successfully.
+
+### Infura
+> The mobile application (or dApp) is linked to the smart contract using the Infura API. It serves as a Gateway and manages all requests made to the smart contract. An account must must be created in order to access the Infura API. To view the statistics of requests made to a smart contract, a project must first be built for this application.
+## Flutter Mobile Application
+After installing the application on the mobile device of the employee, the user interface will look as shown below.
+
+
 ## Installation
 * To clone the repository use the below link:
 ```
 https://github.com/niyotham/Refund-by-Location-Smart-Contract
 ``` 
 ## To run the repository first run the following:
+
+
+## Flutter App Installation guide
+### IOS
+``` git clone https://github.com/Abel-Blue/refund-smart-contract.git
+cd refund-smart-contract
+cd flutterdapp
+flutter pub get
+flutter build ios --no-sound-null-safety
+flutter install-local --platform ios
+
+``` 
+### Android
+```
+git clone https://github.com/Abel-Blue/refund-smart-contract.git
+cd refund-smart-contract
+cd flutterdapp
+flutter pub get
+flutter build apk --no-sound-null-safety
+flutter install
+``` 
+### Run flutter App on debug mode
+First connect your device using USB cable.
+```
+git clone https://github.com/Abel-Blue/refund-smart-contract.git
+cd refund-smart-contract
+cd flutterdapp
+flutter pub get
+flutter run --no-sound-null-safety 
+```
