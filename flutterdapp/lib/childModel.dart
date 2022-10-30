@@ -19,15 +19,19 @@ class childModel extends ChangeNotifier {
   late String y;
   late String latitude;
   late String longitude;
+  late List empStatus;
+  late String balance;
   late ContractFunction _readCoordinates;
   late ContractFunction _sendCoordinates;
+  late ContractFunction _updateCompCountStatus;
+  late ContractFunction _empContractStatus;
   childModel() {
     initiateSetup();
   }
   Future<void> initiateSetup() async {
     _httpClient = Client();
     _client = Web3Client(
-        "https://rinkeby.infura.io/v3/84ee596119e643cdb6e534c7c3674cfa",
+        "https://goerli.infura.io/ws/v3/d6525bf95d3746c485fbcfb80bea5bf6",
         _httpClient);
     await getAbi();
     await getCredentials();
@@ -36,7 +40,7 @@ class childModel extends ChangeNotifier {
 
   Future<void> getAbi() async {
     _abi = await rootBundle.loadString("../assets/abi.json");
-    _contractAddress = "0x4943030bce7e49dd13b4dd120c0fef7dde3c18a0";
+    _contractAddress = "0xDD958a6a596b0C84aE80D6D5927ca24ea53fE66F";
 
 //print(_abi);
 //print(_contractAddress);
@@ -44,7 +48,7 @@ class childModel extends ChangeNotifier {
 
   Future<void> getCredentials() async {
     _credentials = EthPrivateKey.fromHex(
-        "d585835f87981557df21fbaf99df4c9d06fd374b6efd121c027e0655cee5b627");
+        "dc18426456bc2e9640594701099a0bb8217ff8017e1b92a47bf768160c67ba65");
 //print(_credentials);
   }
 
@@ -53,6 +57,8 @@ class childModel extends ChangeNotifier {
         EthereumAddress.fromHex(_contractAddress));
     _readCoordinates = _contract.function("readCoordinates");
     _sendCoordinates = _contract.function("sendCoordinates");
+    _updateCompCountStatus = _contract.function('updateCompCountStatus');
+    _empContractStatus = _contract.function('empContractStatus');
   }
 
   getCoordinates() async {
@@ -87,6 +93,37 @@ class childModel extends ChangeNotifier {
     print(longitude);
     print("Sent Encrypted Data");
     getCoordinates();
+    isLoading = false;
+    notifyListeners();
+  }
+
+  getBalance(String address) async {
+    EtherAmount etherAmount =
+        await _client.getBalance(EthereumAddress.fromHex(address));
+    balance = '${etherAmount.getValueInUnit(EtherUnit.ether)} Eth';
+  }
+
+  getContractStatus(String address) async {
+    initiateSetup();
+
+    empStatus = await _client.call(
+        contract: _contract,
+        function: _empContractStatus,
+        params: [EthereumAddress.fromHex(address)]);
+    print(empStatus);
+  }
+
+  updateCompCountStatus(String latitude, String longitude) async {
+    await _client.sendTransaction(
+        _credentials,
+        Transaction.callContract(
+            contract: _contract,
+            function: _updateCompCountStatus,
+            parameters: [
+              BigInt.from(int.parse(latitude)),
+              BigInt.from(int.parse(longitude))
+            ]));
+    print('set employee executed');
     isLoading = false;
     notifyListeners();
   }

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -29,6 +30,64 @@ class _ChildPageState extends State<ChildPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Employee Location"),
+        actions: [
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  "4",
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Color.fromARGB(255, 243, 205, 33),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  "100",
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: IconButton(
+                  onPressed: () {
+                    listModel.getContractStatus("");
+                    showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('Show Status'),
+                        content: Container(
+                          height: 120,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Comliance Count: 4"),
+                              Text("Balance: 100 ETH"),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'OK'),
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  icon: Icon(Icons.view_agenda_sharp),
+                ),
+              )
+            ],
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -96,17 +155,15 @@ class _ChildPageState extends State<ChildPage> {
                 onChanged: (value) {
                   setState(() {
                     if (value) {
-// final LocationSettings locationSettings =
-// LocationSettings(
-// accuracy: LocationAccuracy.high,
-// distanceFilter: 100,
-// );
+                      // final LocationSettings locationSettings =
+                      // LocationSettings(
+                      // accuracy: LocationAccuracy.high,
+                      // distanceFilter: 100);
                       var geolocator = Geolocator();
                       var locationOptions = LocationOptions(
                         accuracy: LocationAccuracy.high,
                         distanceFilter: 100,
                       );
-// ignore: unused_local_variable
                       positionStream =
                           geolocator.getPositionStream(locationOptions).listen(
                         (Position position) {
@@ -115,6 +172,7 @@ class _ChildPageState extends State<ChildPage> {
                               print("Tracking On");
                               value = true;
                               isSwitched = true;
+                              // ignore: unnecessary_null_comparison
                               print(position == null
                                   ? 'Unknown'
                                   : position.latitude.toString() +
@@ -122,9 +180,9 @@ class _ChildPageState extends State<ChildPage> {
                                       position.longitude.toString());
                               lat_1 = position.latitude.toString();
                               lon_1 = position.longitude.toString();
-                              listModel.addCoordinates(
-                                lat_1,
-                                lon_1,
+                              listModel.updateCompCountStatus(
+                                lat_1.split(".")[0],
+                                lon_1.split(".")[0],
                               );
                               status = "Latitude: $lat_1\nLongitude: $lon_1";
                               locationMessage =
