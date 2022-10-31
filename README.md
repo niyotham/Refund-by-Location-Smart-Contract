@@ -43,8 +43,8 @@ To use MetaMask wallet:
 > The mobile application (or dApp) is linked to the smart contract using the Infura API. It serves as a Gateway and manages all requests made to the smart contract. An account must must be created in order to access the Infura API. To view the statistics of requests made to a smart contract, a project must first be built for this application.
 ## Flutter Mobile Application
 After installing the application on the mobile device of the employee, the user interface will look as shown below.
-
-![alt text](https://github.com/niyotham/Refund-by-Location-Smart-Contract/blob/main/flutterdapp/images/Screen%20Shot%202022-10-30%20at%2011.08.06%20PM.png) ![alt text](https://github.com/niyotham/Refund-by-Location-Smart-Contract/blob/main/flutterdapp/images/Screen%20Shot%202022-10-30%20at%208.45.28%20PM.png)
+![alt text](https://github.com/niyotham/Refund-by-Location-Smart-Contract/blob/main/flutterdapp/images/Screen%20Shot%202022-10-30%20at%208.45.28%20PM.png)
+![alt text](https://github.com/niyotham/Refund-by-Location-Smart-Contract/blob/main/flutterdapp/images/Screen%20Shot%202022-10-30%20at%2011.08.06%20PM.png) 
 
 
 ## Installation
