@@ -35,9 +35,9 @@ To use MetaMask wallet:
 
 ![alt text](https://github.com/niyotham/Refund-by-Location-Smart-Contract/blob/main/flutterdapp/images/Screen%20Shot%202022-10-30%20at%2010.18.00%20AM.png)
 
-![alt text](https://github.com/niyotham/Refund-by-Location-Smart-Contract/blob/main/flutterdapp/images/Screen%20Shot%202022-10-30%20at%2010.18.10%20AM.png)
-
 > Then Deploying Smart Contract via Remix IDE. After compiling and deploying the Smart Contract by approving transactions in MetaMask wallet, it will show up on our wallet activity status that the contract is deployed successfully.
+
+![alt text](https://github.com/niyotham/Refund-by-Location-Smart-Contract/blob/main/flutterdapp/images/Screen%20Shot%202022-10-30%20at%2010.18.10%20AM.png)
 
 ### Infura
 > The mobile application (or dApp) is linked to the smart contract using the Infura API. It serves as a Gateway and manages all requests made to the smart contract. An account must must be created in order to access the Infura API. To view the statistics of requests made to a smart contract, a project must first be built for this application.
