@@ -20,11 +20,11 @@ produce an Ethereum based dApp that has both the smart contract tested and deplo
     - [x] Use solidity programming
     - [ ]  Testing and deploying the contract on ethereum blockchain
 - [ ]  Building frontend web dApp
-    - [ ]  Designing the user interface
-    - [ ]  Doing it with Flutter
+    - [x]  Designing the user interface
+    - [ ]  Implementing  it with Flutter
 - [ ]  Connecting the frontend and smart contract backend
 ## Implementation
-- [ ] Frontend  with Flutter
+- [x ] Frontend  with Flutter
 - [x] Backendwith solidity for the smart contract and hardhat frame work is used
 ### Setting up MetaMask Wallet
 To use MetaMask wallet:
