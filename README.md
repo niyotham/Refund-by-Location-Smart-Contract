@@ -32,6 +32,7 @@ To use MetaMask wallet:
 - Install MetaMask extension on the desired web browser.
 - Setup Account and Test network (in this project, Rinkeby test network is used)
 - Load funds into Rinkeby account address by using crypto faucets.
+![alt text](https://github.com/niyotham/Refund-by-Location-Smart-Contract/blob/main/flutterdapp/images/Screen%20Shot%202022-10-30%20at%2010.18.00%20AM.png)
 
 Then Deploying Smart Contract via Remix IDE. After compiling and deploying the Smart Contract by approving transactions in MetaMask wallet, it will show up on our wallet activity status that the contract is deployed successfully.
 
